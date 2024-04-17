@@ -20,6 +20,8 @@ gem "jbuilder"
 
 gem "redis", ">= 4.0.1"
 
+gem 'sass-rails'
+
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 gem "bootsnap", require: false
