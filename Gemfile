@@ -28,6 +28,10 @@ gem "devise"
 
 gem "simple_form"
 
+gem "dotenv-rails"
+
+gem "cloudinary"
+
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
   gem "pry"
