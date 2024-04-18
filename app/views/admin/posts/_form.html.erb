@@ -1,0 +1,10 @@
+<%= simple_form_for [:admin, @post] do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
+  <%= f.input :banner, as: :file %>
+  <%= f.input :title %>
+  <%= f.input :subtitle %>
+  <%= f.rich_text_area :content %>
+
+  <%= f.button :submit %>
+<% end %>

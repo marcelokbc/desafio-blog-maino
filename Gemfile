@@ -34,6 +34,8 @@ gem "dotenv-rails"
 
 gem "cloudinary"
 
+gem "image_processing", "~> 1.2"
+
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
   gem "pry"

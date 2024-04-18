@@ -3,6 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts, dependent: :destroy
+  has_one_attached :photo
 
   enum access: { user: 0, admin: 1 }
 end
