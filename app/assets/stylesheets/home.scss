@@ -1,7 +1,66 @@
 .carousel {
+  height: 50vh;
+
+  img {
     height: 50vh;
-  
-    img {
-      height: 60vh;
-    }
   }
+}
+
+.highlight-card {
+  height: 300px;
+  width: 300px;
+  background-color: red;
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-show-banner {
+  width: 100%;
+  height: 50vh;
+  z-index: -1;
+}
+
+.post-header {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 20px;
+  background: #fff;
+  z-index: 1;
+  margin-top: -50px;
+  border-radius: 20px;
+}
+
+.post-header-author {
+  border-radius: 20px;
+
+  img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+  }
+}
+
+.post-body {
+  margin-top: 5px;
+}
+
+.post-show-last-news {
+  border-bottom: 1px solid #e3e3e3;
+  padding: 10px;
+
+  img {
+    width: 100%;
+  }
+
+  p {
+    font-weight: bold;
+    text-align: center;
+  }
+}

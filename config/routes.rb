@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root "pages#home"
 
   namespace :admin do
-    resources :dashboard
+    resources :dashboard, only: [:index]
+    resources :posts
   end
+
+  resources :posts, only: [:index, :show]
 end

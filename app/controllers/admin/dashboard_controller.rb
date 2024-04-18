@@ -2,6 +2,7 @@ class Admin::DashboardController < ApplicationController
   before_action :user_is_admin?
 
   def index
+    @posts = Post.all.order(created_at: :desc)
   end
 
   private
