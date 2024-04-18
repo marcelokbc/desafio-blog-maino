@@ -15,3 +15,4 @@
  */
  @import "home";
  @import "navbar";
+ @import 'pagy_nav.css';

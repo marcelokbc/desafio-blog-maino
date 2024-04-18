@@ -14,10 +14,24 @@ User.destroy_all
 
 User.create(
   email: "admin@admin.com",
-  name: "adminVP",
+  name: "Marcelo Candido",
   password: "123456",
   password_confirmation: "123456",
   access: "admin"
 )
 
 puts "Default user created"
+
+# Create posts
+5.times do |i|
+ post = Post.new(
+    title: Faker::Lorem.sentence(word_count: 3),
+    subtitle: Faker::Lorem.sentence(word_count: 5),
+    content: Faker::Lorem.paragraph(sentence_count: 10),
+    user_id: 1
+ )
+  post.banner.attach(io: File.open("app/assets/images/banner#{i + 1}.jpg"), filename: "banner#{i + 1}.jpg")
+  post.save!
+end
+
+puts "Posts created"

@@ -36,6 +36,8 @@ gem "cloudinary"
 
 gem "image_processing", "~> 1.2"
 
+gem 'pagy'
+
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
   gem "pry"
