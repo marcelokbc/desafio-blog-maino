@@ -1,0 +1,8 @@
+<%= form_with(model: user_comment, url: user_comments_path, method: :post) do |f| %>
+  <% if user_signed_in? && @post.present? %>
+    <%= f.hidden_field :post_id, value: @post.id %>
+  <% else %>
+    <%= f.text_area :content, placeholder: "Your Comment" %>
+  <% end %>
+  <%= f.submit "Submit" %>
+<% end %>

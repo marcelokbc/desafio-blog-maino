@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
 
   resources :posts, only: [:index, :show]
+  resources :user_comments, only: [:new, :create, :destroy]
 end
