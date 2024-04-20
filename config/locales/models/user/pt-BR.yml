@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    attributes:
+      user:
+        name: 'Nome'
+        email: 'E-mail'
+        password: 'Senha'
+        password_confirmation: 'Confirmação de Senha'
+        current_password: 'Senha Atual'
+        remember_me: 'Lembrar-me'
+        photo: 'Foto'
+    enums:
+      user:
+        access:
+          admin: 'Administrador'
+          user: 'Usuário'
