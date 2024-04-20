@@ -1,0 +1,58 @@
+<section class="py-8 bg-light">
+  <div class="container px-4 mx-auto p-5">
+    <div class="p-7 pb-16 pt-12 border border-dark rounded-3">
+      <div class="row p-5">
+        <div class="col-md-6">
+          <h3 class="text-3xl font-heading font-sourcesans font-medium text-dark">
+            Meus Posts
+          </h3>
+        </div>
+        <div class="col-md-6 text-end">
+          <%= link_to "Novo Post", new_post_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+      <div class="overflow-x-auto my-10">
+        <div class="table-responsive p-5">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Subtítulo</th>
+                <th>Banner</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @posts.each do |post| %>
+                <tr>
+                  <td><%= post.title %></td>
+                  <td><%= post.subtitle %></td>
+                  <td>
+                    <% if post.banner.attached? %>
+                      <%= image_tag(post.banner, class: "img-thumbnail", style: "width: 100px; height: 100px;") %>
+                    <% else %>
+                      Sem imagem
+                    <% end %>
+                  </td>
+                  <td>
+                    <div class="btn-group gap-4" role="group">
+                      <%= link_to edit_post_path(post), class: "btn btn-warning" do %>
+                        Editar
+                      <% end %> 
+                      <%= link_to post_path(post), class:"btn btn-success" do %>
+                        Visualizar
+                      <% end %>
+                      <%= button_to post_path(post), method: :delete, form: { data: { turbo_confirm: "Você tem certeza?"}}, class:"btn btn-danger" do %>
+                        Excluir
+                      <% end %>
+                    </div>
+                  </td>  
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
