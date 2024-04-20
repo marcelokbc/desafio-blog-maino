@@ -2,7 +2,7 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :authenticate_user!
-  # before_action :configure_sign_up_params, only: [:create]
+  #before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -46,8 +46,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   private
 
-  def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+  def sign_up_params
+    params.require(:user).permit(:email, :password, :password_confirmation, :name, :photo)
   end
 
   # protected
