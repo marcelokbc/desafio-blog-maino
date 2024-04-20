@@ -67,7 +67,7 @@
     <div class="row">
       <div class="col-md-9">
         <div class="p-3">
-          <h3>Últimas notícias</h3>
+          <h3>Últimos posts</h3>
           <hr/>
           <% @posts.each do |post| %>
             <div class="">
@@ -78,10 +78,12 @@
                   </div>
                   <div class="col-md-6">
                     <div>
-                      <h4><%= post.title %></h4>
-                      <p class="">Por: <%= current_user.name %></p>
+                      <h4>Título: <%= post.title %></h4>
+                      <p class="">Por: <%= post.user.name %></p>
                     </div>
-                    <p><%= post.subtitle %></p>
+                      <p>Subtítulo: <%= post.subtitle %></p>
+                      <p>Criado em: <%= post.created_at.strftime("%d/%m/%Y") %></p>
+                      <p>Comentários: <%= post.user_comments.count %></p>
                   </div>
                 </div>
               <% end %>
@@ -94,7 +96,19 @@
       </div>
       <div class="col-md-3" style="border-left: 1px solid #e3e3e3">
         <div class="p-3">
-          <h3>Últimas análises</h3>
+          <h3>Últimos comentários</h3>
+            <hr/>
+            <% @user_comments.each do |user_comment| %>
+              <div class="mb-3">
+                <p><%= user_comment.content %></p>
+                <% if user_comment.user.present? %>
+                  <p>Por: <%= user_comment.user.name %> </p>
+                <% else %>
+                  <p>Por: Anônimo</p>
+                <% end %>
+                <hr>
+              </div>
+            <% end %>
         </div>
       </div>
     </div>
