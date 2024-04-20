@@ -1,0 +1,47 @@
+<section class="py-8 bg-light h-full">
+  <div class="container p-5 mx-auto">
+    <div class="pb-16 pt-12 border border-dark rounded-3 p-5">
+      <div class="text-center">
+        <% if action_name == 'show' %>
+          <p class="fs-3 font-heading font-sourcesans font-medium"> Visualizar post </p>
+        <% elsif action_name == 'edit' %>
+          <p class="fs-3 font-heading font-sourcesans font-medium"> Editar post </p>
+        <% else %>
+          <p class="fs-3 font-heading font-sourcesans font-medium"> Novo post </p>
+        <% end %>
+      </div>
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+          <%= simple_form_for [@post], defaults: { disabled: action_name == "show" } do |f| %>
+            <%= f.error_notification %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <%= f.input :title, placeholder: "Titulo", class: "form-control" %>
+              </div>
+              <div class="col-md-6">
+                <%= f.input :subtitle, placeholder: "Subtítulo", class: "form-control" %>
+              </div>
+              <div class="col-md-6">
+                <%= f.input :banner, as: :file, placeholder: "Banner", class: "form-control" %>
+              </div>
+              <div class="col-md-6">
+                <%= f.input :content, as: :rich_text_area, placeholder: "Conteúdo", class: "form-control" %>
+              </div>
+              <div class="col-md-6">
+                <% if action_name == 'show' %>
+                  <%= link_to "EDITAR", edit_post_path(@post), class: "btn btn-warning" %>
+                <% else %>
+                  <%= f.submit "SALVAR", class: "btn btn-success" %>
+                <% end %>
+              </div>
+              <div class="col-md-6">
+                <%= link_to "VOLTAR", posts_path(@post), class: "btn btn-primary" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
