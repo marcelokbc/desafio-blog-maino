@@ -6,8 +6,10 @@ class Admin::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
+      flash[:notice] = "Post criado com sucesso"
       redirect_to admin_dashboard_index_path
     else
+      flash[:error] = "O post não foi criado, tente novamente"
       render :new
     end
   end

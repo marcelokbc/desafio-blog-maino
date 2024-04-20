@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    attributes:
+      tag:
+        name: "Nome"
+        created_at: "Data de criação"
+        updated_at: "Data de atualização"
+        
+    

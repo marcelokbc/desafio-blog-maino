@@ -4,10 +4,10 @@ class UserCommentsController < ApplicationController
     @user_comment.user = current_user if user_signed_in?
 
     if @user_comment.save!
-      flash[:notice] = "Comment posted."
+      flash[:notice] = "Comentário postado com sucesso."
       redirect_to root_path
     else
-      flash[:error] = "Comment not posted."
+      flash[:error] = "Erro ao postar comentário."
       redirect_to root_path, status: :unprocessable_entity
     end
   end

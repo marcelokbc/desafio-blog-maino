@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    attributes:
+      user_comment:
+        content: "Comentário"
+        created_at: "Data de criação"
+        updated_at: "Data de atualização"
+        
+    
