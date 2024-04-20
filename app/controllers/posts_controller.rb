@@ -3,6 +3,8 @@ class PostsController < ApplicationController
   
   def show
     @posts = Post.all
+    @user_comments = UserComment.where(post_id: @post.id).order(created_at: :desc)
+    @comments = UserComment.where(post_id: @post.id).map { |comment| comment.content }
   end
 
   private
