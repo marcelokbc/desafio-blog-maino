@@ -23,10 +23,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
   def update
     @user = current_user
-    if @user.update(user_params)
-      redirect_to root_path, notice: "Profile updated successfully"
+    if @user.update(sign_up_params)
+      flash[:notice] = "Perfil atualizado com sucesso"
+      redirect_to root_path
     else
-      render :edit
+      flash[:alert] = "Erro ao atualizar perfil"
+      render :edit, status: :unprocessable_entity 
     end
   end
 
