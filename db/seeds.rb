@@ -12,13 +12,16 @@ User.destroy_all
 
 # Create a default user
 
-User.create(
+user = User.create(
   email: "admin@admin.com",
   name: "Marcelo Candido",
   password: "123456",
   password_confirmation: "123456",
   access: "admin"
 )
+
+user.photo.attach(io: File.open("app/assets/images/avatar.jpg"), filename: "avatar.jpg")
+user.save!
 
 puts "Default user created"
 
@@ -35,3 +38,10 @@ puts "Default user created"
 end
 
 puts "Posts created"
+
+# create tags
+["Filmes", "Séries", "Animes", "Games"].each do |tag_name|
+  Tag.find_or_create_by!(title: tag_name)
+end
+
+puts "Tags created"

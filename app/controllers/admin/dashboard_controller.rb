@@ -3,6 +3,7 @@ class Admin::DashboardController < ApplicationController
 
   def index
     @posts = Post.all.order(created_at: :desc)
+    @tags = Tag.all.order(created_at: :desc)
   end
 
   private

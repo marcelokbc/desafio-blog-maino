@@ -17,3 +17,6 @@
  @import "navbar";
  @import 'pagy_nav.css';
  @import "post";
+ @import "buttons";
+ @import "dashboard";
+ @import "colors";

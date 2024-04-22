@@ -28,6 +28,12 @@
               <div class="col-md-6">
                 <%= f.input :content, as: :rich_text_area, placeholder: "Conteúdo", class: "form-control" %>
               </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <%= f.label :tag_ids, "Tags: " %>
+                  <%= f.collection_check_boxes :tag_ids, @tags, :id, :title, { multiple: true }, class: "spacer-radio" %>
+                </div>
+              </div>
               <div class="col-md-6">
                 <% if action_name == 'show' %>
                   <%= link_to "EDITAR", edit_post_path(@post), class: "btn btn-warning" %>
