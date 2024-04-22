@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
-  
+  before_action :set_user, only: %i[index show new create edit update destroy]
   def index
     @posts = Post.where(user_id: current_user.id)
   end
@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @tags = Tag.all
     render :form
   end
 
@@ -54,7 +55,11 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def set_user
+    @user = User.find(current_user.id)
+  end
+
   def post_params
-    params.require(:post).permit(:title, :subtitle, :banner, :content)
+    params.require(:post).permit(:user_id, :title, :subtitle, :banner, :content, tag_ids: [])
   end
 end

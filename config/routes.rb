@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :dashboard, only: [:index]
-    resources :posts
+    resources :posts, only: [:new, :create]
+    resources :tags, only: [:new, :create]
   end
 
   resources :posts

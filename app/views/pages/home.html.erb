@@ -84,6 +84,9 @@
                       <p>Subtítulo: <%= post.subtitle %></p>
                       <p>Criado em: <%= post.created_at.strftime("%d/%m/%Y") %></p>
                       <p>Comentários: <%= post.user_comments.count %></p>
+                      <% post.tags.each do |tag| %>
+                        <%= tag.title %>
+                      <% end %>
                   </div>
                 </div>
               <% end %>

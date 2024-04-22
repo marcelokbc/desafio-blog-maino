@@ -1,0 +1,15 @@
+.btn-main-button {
+    background-color: var(--primary-color);
+    color: var(--white);
+  
+    padding: 5px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  
+  .btn-main-button:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+  
+    opacity: 0.8;
+  }
