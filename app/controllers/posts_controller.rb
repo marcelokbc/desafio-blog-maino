@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
-  before_action :set_user, only: %i[index show new create edit update destroy]
+  before_action :set_user, only: %i[index new create edit update destroy]
   def index
     @posts = Post.where(user_id: current_user.id)
   end
@@ -30,6 +30,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @tags = Tag.all
     render :form
   end
 
