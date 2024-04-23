@@ -13,11 +13,10 @@
  *= require_tree .
  *= require_self
  */
- @import "home";
- @import "navbar";
- @import 'pagy_nav.css';
- @import 'actiontext.css';
- @import "post";
- @import "buttons";
- @import "dashboard";
- @import "colors";
+ @import './home.css';
+ @import './navbar.css';
+ @import './pagy_nav.css';
+ @import './actiontext.css';
+ @import './post.css';
+ @import './_buttons.css';
+ @import './_dashboard.css';
